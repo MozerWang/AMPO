@@ -1,0 +1,11 @@
+{  
+  "sotopia_bc":{
+    "file_name": "bc_file_path",
+    "columns": {
+        "system": "system",
+        "prompt": "instruction",
+        "query": "input",
+        "response": "output"
+    }
+  }
+}

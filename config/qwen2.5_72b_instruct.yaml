@@ -1,0 +1,10 @@
+type: "dashscope"
+process_num: 30
+port: 8000
+args:
+  api_name: 'qwen2.5-72b-instruct'
+  api_key: '' 
+  api_url: ''
+run_args:
+  temperature: 0.0
+  n: 1
