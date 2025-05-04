@@ -8,14 +8,14 @@
 <br>
 <a href="https://scholar.google.com.hk/citations?user=glV21ZsAAAAJ&hl=zh-CN">Minzheng Wang</a><sup><span>1,2</span></sup>, 
 <a>Yongbin Li</a><sup><span>3</span></sup>,
-<a>Haobo Wang</a><sup><span>2</span></sup>,
+<a>Haobo Wang</a><sup><span>4</span></sup>,
 <a href="https://xinghuazhang.top/">Xinghua Zhang</a><sup><span>3🌟</span></sup>,
 <br>
-<a>Nan Xu</a><sup><span>2</span></sup>,
+<a>Nan Xu</a><sup><span>1</span></sup>,
 <a>Bingli Wu</a><sup><span>3</span></sup>,
 <a>Fei Huang</a><sup><span>3</span></sup>,
 <a>Haiyang Yu</a><sup><span>3</span></sup>,
-<a>Wenji Mao</a><sup><span>2,1🌟</span></sup>
+<a>Wenji Mao</a><sup><span>1,2🌟</span></sup>
 <br>
 
 🌟 Corresponding author
