@@ -47,14 +47,20 @@ Firstly, we develop four thinking modes inspired by hierarchical cognitive contr
 
 ## 🔧How to use
 **Step1** Create conda environment and Install other dependencies.
+1. Clone this repository
 ```shell
 git clone https://github.com/MozerWang/AMPO
 cd AMPO
-# BC environment (LLaMA Factory)
+```
+2. Create BC conda environment (LLaMA Factory).
+```shell
 conda create --name BC python=3.11 -y
 conda activate BC
 cd BC 
 pip install -e ".[torch,metrics]"
+```
+3. Create RL conda environment (verl).
+```shell
 # RL environment (verl)
 conda create --name RL python=3.11 -y
 conda activate RL
