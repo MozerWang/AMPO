@@ -25,14 +25,14 @@
 <sup>3</sup> Tongyi Lab, Alibaba Group<br>
 <sup>4</sup> Peking University<br>
 
-<font size=3><div align='center' >  [[📖 ArXiv Paper](https://arxiv.org/pdf/2402.03300)] [[📊 Code](https://github.com/MozerWang/AMPO)] [[🏆 Models (Coming Soon)](https://huggingface.co)] [[😊 Data (Comming Soon)](https://huggingface.co/datasets/)]  </div></font>
+<font size=3><div align='center' >  [[📖 ArXiv Paper](https://arxiv.org/pdf/2402.03300)] [[📊 Code](https://github.com/MozerWang/AMPO)] [[😊 Data](https://huggingface.co/datasets/iiiiwis/AMPO)] [[🏆 Models (Coming Soon)](https://huggingface.co)]  </div></font>
 
 </div>
 
 
 ## 👀 Overview
 This repository contains code for our paper **Think on your Feet: Adaptive Thinking via Reinforcement Learning for Social Agents**. In this paper, we propose the **A**daptive **M**ode **L**earning framework (**AML**) to empower social agents with the capability for adaptive thinking, enabling them to effectively navigate and respond to the dynamics of social interaction context.
-Firstly, we develop four thinking modes inspired by hierarchical cognitive control theory, covering a spectrum from non-thought, through shallow thinking, to increasingly profound levels of contemplation. Next, we perform the injection of thinking modes, which consists of behavioral cloning for learning basic modes, and RL-based adaptive thinking mode enhancement. For RL-based enhancement, we contrapuntally develop the **A**daptive **M**ode **P**olicy **O**ptimization (**AMPO**) algorithm which incorporates the mode-level and sample-level information into advantage estimation to strengthen adaptive thinking ability. In terms of reward, we design three types of reward functions, including answer reward, format reward, and answer length reward, providing feedback for choosing the appropriate thinking mode. APL finally achieves state-of-the-art performance in comparison with current open-source and closed-source advanced LLMs.
+Firstly, we develop four thinking modes inspired by hierarchical cognitive control theory, covering a spectrum from non-thought, through shallow thinking, to increasingly profound levels of contemplation. Next, we perform the injection of thinking modes, which consists of behavioral cloning for learning basic modes, and RL-based adaptive thinking mode enhancement. For RL-based enhancement, we contrapuntally develop the **A**daptive **M**ode **P**olicy **O**ptimization (**AMPO**) algorithm which incorporates the mode-level and sample-level information into advantage estimation to strengthen adaptive thinking ability. In terms of reward, we design three types of reward functions, including answer reward, format reward, and answer length reward, providing feedback for choosing the appropriate thinking mode. AML finally achieves state-of-the-art performance in comparison with current open-source and closed-source advanced LLMs.
 <p align="center">
     <img src="src/exp1.png" width="70%" height="50%">
 </p>
@@ -43,46 +43,67 @@ Firstly, we develop four thinking modes inspired by hierarchical cognitive contr
 
 ## 🔥 Update
 
-- [2025.05.04]🔥AMPO is coming! We release the [paper](https://arxiv.org/pdf/2402.03300), [code](https://github.com/MozerWang/AMPO)! The data and ckpt are still under security review and will be available soon！
+- [2025.05.04]🔥AMPO is coming! We release the [paper](https://arxiv.org/pdf/2402.03300), [code](https://github.com/MozerWang/AMPO), [data](https://huggingface.co/datasets/iiiiwis/AMPO)! The ckpt is still under security review and will be available soon！
 
 ## 🔧How to use
-**Step1** Create a conda environment and Install other dependencies.
+**Step1** Create conda environment and Install other dependencies.
 ```shell
-conda create --name AMPO python=3.11 -y
-conda activate AMPO
+git clone https://github.com/MozerWang/AMPO
+# BC environment (LLaMA Factory)
+conda create --name BC python=3.11 -y
+conda activate BC
+cd BC 
+pip install -e ".[torch,metrics]"
+# RL environment (verl)
+conda create --name RL python=3.11 -y
+conda activate RL
+cd RL
+pip3 install -e .[vllm]
 pip install -r requirements.txt
 ```
 
-**Step2** Preparing the Model API
+> *you can also refer to the install instruction in [verl](https://github.com/volcengine/verl) and [llamafactory](https://github.com/hiyouga/LLaMA-Factory/).*
+
+**Step2** Download the training data from huggingface
+```shell
+git lfs install
+git clone https://huggingface.co/datasets/iiiiwis/AMPO
+```
+**Step3** Preparing the Model API
 
 1. (**Must**) Set up your OPENAI key in config/gpt_4o.yaml (Evaluation)
 ```shell
 api_key: "Your OPENAI key"
+api_url: "API URL"
 ```
 
 2. (**Must**) Set up your key in config/qwen2.5_72b_instruct.yaml (Reward Model)
 ```shell
 api_key: "Your key"
+api_url: "API URL"
 # We also recommend using vLLM. And we use HTTP server that implements OpenAI’s Completions and Chat API.
 # Set up your vLLM settings in config/*.yaml
 ```
-**Step3** Behavior Cloning Training
+**Step4** Behavior Cloning Training
 ```shell
+conda activate BC
 cd BC
 ## (Must) Firstly set the bc_training_data_path in ./BC/data/dataset_info.yaml
 sh train.sh
 ```
 
-**Step4** RL Training
+**Step5** RL Training
 ```shell
+conda activate RL
 cd RL
 ## (Must) Firstly, translate the rl training data into ".parquet" format by using the script in ./RL/example/data_preprocess/sotopia.py
 sh sotopia_ampo_llama3.1_8b.sh
 sh sotopia_ampo_qwen2.5_7b.sh
 ```
 
-**Step5** Evaluation and Inference
+**Step6** Evaluation and Inference
 ```shell
+conda activate RL
 cd RL
 sh infer.sh
 ## show result
