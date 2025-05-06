@@ -25,7 +25,7 @@
 <sup>3</sup> Tongyi Lab, Alibaba Group<br>
 <sup>4</sup> Peking University<br>
 
-<font size=3><div align='center' >  [[📖 ArXiv Paper](https://arxiv.org/pdf/2402.03300)] [[📊 Code](https://github.com/MozerWang/AMPO)] [[😊 Data](https://huggingface.co/datasets/iiiiwis/AMPO)] [[🏆 Models (Coming Soon)](https://huggingface.co)]  </div></font>
+<font size=3><div align='center' >  [[📖 ArXiv Paper](https://arxiv.org/pdf/2505.02156)] [[📊 Code](https://github.com/MozerWang/AMPO)] [[😊 Data](https://huggingface.co/datasets/iiiiwis/AMPO)] [[🏆 Models (Coming Soon)](https://huggingface.co)]  </div></font>
 
 </div>
 
@@ -43,7 +43,7 @@ Firstly, we develop four thinking modes inspired by hierarchical cognitive contr
 
 ## 🔥 Update
 
-- [2025.05.04]🔥AMPO is coming! We release the [paper](https://arxiv.org/pdf/2402.03300), [code](https://github.com/MozerWang/AMPO), [data](https://huggingface.co/datasets/iiiiwis/AMPO)! The ckpt is still under security review and will be available soon！
+- [2025.05.04]🔥AMPO is coming! We release the [paper](https://arxiv.org/pdf/2505.02156), [code](https://github.com/MozerWang/AMPO), [data](https://huggingface.co/datasets/iiiiwis/AMPO)! The ckpt is still under security review and will be available soon！
 
 ## 🔧How to use
 **Step1** Create conda environment and Install other dependencies.
@@ -129,7 +129,7 @@ Thanks for these amazing work!
       title={Think on your Feet: Adaptive Thinking via Reinforcement Learning for Social Agents}, 
       author={Minzheng Wang and Yongbin Li and Haobo Wang and Xinghua Zhang and Nan Xu and Bingli Wu and Fei Huang and Haiyang Yu and Wenji Mao},
       year={2025},
-      journal={arXiv preprint arXiv:2505.xxxxx},
-      url={https://arxiv.org/abs/2505.xxxxx}
+      journal={arXiv preprint arXiv:2505.02156},
+      url={https://arxiv.org/abs/2505.02156}
 }
 ```
