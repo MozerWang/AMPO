@@ -81,10 +81,10 @@ class BatchSotopiaEnv():
         self.tokenizer = tokenizer
 
         # four model chat ways: 
-        # 1. self-chat (same model) (450/1000 episodes)
+        # 1. self-chat (same model) (450 episodes)
         # 2. vllm offline infer with same vllm base model (both vllm offline infer eg. qwen-lora vs qwen 900 episodes)
         # 3. vllm offline infer with api opponent model (vllm offline infer vs api eg. qwen-lora vs gpt4o 900 episodes)
-        # 4. api model1 vs api model2 (900/2000 episodes)
+        # 4. api model1 vs api model2 (900 episodes)
         
         if test_same_model:
             assert opponent_model == None, "way1: opponent_model must be empty when test_same_model is True"

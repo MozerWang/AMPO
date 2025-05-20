@@ -1,7 +1,7 @@
-# Think on your Feet: Adaptive Thinking via Reinforcement Learning for Social Agents
+# Adaptive Thinking via Mode Policy Optimization for Social Language Agents
 
 <p align="center">
-    <img src="src/ampo.png" width="70%" height="50%">
+    <img src="src/aml.png" width="70%" height="50%">
 </p>
 
 <div align="center">
@@ -31,21 +31,33 @@
 
 
 ## 👀 Overview
-This repository contains code for our paper **Think on your Feet: Adaptive Thinking via Reinforcement Learning for Social Agents**. In this paper, we propose the **A**daptive **M**ode **L**earning framework (**AML**) to empower social agents with the capability for adaptive thinking, enabling them to effectively navigate and respond to the dynamics of social interaction context.
-Firstly, we develop four thinking modes inspired by hierarchical cognitive control theory, covering a spectrum from non-thought, through shallow thinking, to increasingly profound levels of contemplation. Next, we perform the injection of thinking modes, which consists of behavioral cloning for learning basic modes, and RL-based adaptive thinking mode enhancement. For RL-based enhancement, we contrapuntally develop the **A**daptive **M**ode **P**olicy **O**ptimization (**AMPO**) algorithm which incorporates the mode-level and sample-level information into advantage estimation to strengthen adaptive thinking ability. In terms of reward, we design three types of reward functions, including answer reward, format reward, and answer length reward, providing feedback for choosing the appropriate thinking mode. AML finally achieves state-of-the-art performance in comparison with current open-source and closed-source advanced LLMs.
+This repository contains code and data for our paper **Adaptive Thinking via Mode Policy Optimization for Social Language Agents**. In this paper, we propose the **A**daptive **M**ode **L**earning framework (**AML**) to empower social agents with the capability for adaptive thinking, enabling them to effectively respond in accordance with the dynamics of social interaction context.
+Specifically, we first develop four thinking modes inspired by hierarchical cognitive control theory, covering a spectrum from intuitive response, through shallow and strategic thinking, to deep deliberation. 
+Next, we perform the injection of thinking modes, which consists of behavioral cloning for learning basic modes and RL-based adaptive thinking mode enhancement.
+For RL-based enhancement, we contrapuntally develop the **A**daptive **M**ode **P**olicy **O**ptimization (**AMPO**) algorithm, which incorporates the mode-level and sample-level information into advantage estimation to strengthen the context-aware thinking mode switching.
+In terms of reward, we design three types of reward functions, including answer reward, format reward, and answer length reward, providing feedback for choosing the appropriate thinking mode and answer.
+
+## Main Results
 <p align="center">
-    <img src="src/exp1.png" width="70%" height="50%">
+    <img src="./src/exp1.png" width="70%" height="50%">
 </p>
 <p align="center">
-    <img src="src/exp2.png" width="70%" height="50%">
+    <img src="./src/exp2.png" width="70%" height="50%">
 </p>
 
+> Extensive experimental results show that AML and AMPO achieves the SOTA performances in comparison with strong baselines. Details can be found in the paper.
 
 ## 🔥 Update
 
 - [2025.05.04]🔥AMPO is coming! We release the [paper](https://arxiv.org/pdf/2505.02156), [code](https://github.com/MozerWang/AMPO), [data](https://huggingface.co/datasets/iiiiwis/AMPO)! The ckpt is still under security review and will be available soon！
 
 ## 🔧How to use
+<p align="center">
+    <img src="./src/alg.png" width="70%" height="50%">
+</p>
+
+> The full optimization procedure. We employ a two-phase training procedure: The first phase utilizes mode behavioral cloning to enable the model to understand and follow specific thinking modes accurately. In the second phase, we perform adaptive mode policy optimization to enhance the adaptive thinking mode switch and reasoning.
+
 **Step1** Create conda environment and Install other dependencies.
 1. Clone this repository
 ```shell
@@ -122,11 +134,13 @@ Thanks for these amazing work!
 - [verl](https://github.com/volcengine/verl)
 - [vllm](https://github.com/vllm-project/vllm)
 - [llamafactory](https://github.com/hiyouga/LLaMA-Factory/)
+- [dat](https://github.com/likenneth/dialogue_action_token)
+- [sotopia](https://github.com/sotopia-lab/sotopia)
 
 ## Citation
 ```
 @article{wang2025ampo,
-      title={Think on your Feet: Adaptive Thinking via Reinforcement Learning for Social Agents}, 
+      title={Adaptive Thinking via Mode Policy Optimization for Social Language Agents}, 
       author={Minzheng Wang and Yongbin Li and Haobo Wang and Xinghua Zhang and Nan Xu and Bingli Wu and Fei Huang and Haiyang Yu and Wenji Mao},
       year={2025},
       journal={arXiv preprint arXiv:2505.02156},

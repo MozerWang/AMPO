@@ -1,0 +1,7 @@
+type: "deepseek"
+args:
+  api_name: "deepseek-r1"
+  api_key: ""
+  api_url: ""
+run_args:
+  temperature: 0.7

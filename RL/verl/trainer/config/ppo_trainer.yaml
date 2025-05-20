@@ -155,7 +155,7 @@ reward_model:
   use_dynamic_bsz: ${critic.use_dynamic_bsz}
   forward_max_token_len_per_gpu: ${critic.forward_max_token_len_per_gpu}
   reward_manager: thinking
-  env_model: /mnt/workspace/minzheng_wang/SlowThinking/src/config/gpt4o_eval4.yaml
+  env_model: ../config/gpt4o.yaml
   test_baseline: False
 
 algorithm:

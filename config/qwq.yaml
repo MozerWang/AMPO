@@ -1,0 +1,10 @@
+type: "qwq"
+process_num: 30
+port: 8000
+args:
+  api_name: 'qwq-32b'
+  api_key: ''
+  api_url: ''
+run_args:
+  temperature: 0.7
+  n: 1

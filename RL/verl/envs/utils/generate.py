@@ -48,8 +48,6 @@ def get_api_results(prompt_input, config, port):
             callback = requests.post(config['args']['api_url'], data=json.dumps(raw_info, cls=MyEncoder), headers=headers,
                                     timeout=(60, 60))
             result = callback.json()
-            # print(result)
-            # todo: customize the result
             try:
                 result = result['data']['response']['choices'][0]['message']['content']
             except:
@@ -187,6 +185,49 @@ def get_api_results(prompt_input, config, port):
         except Exception as e:
             print(e)
             return []
+    
+    elif config['type'] == 'qwq':
+        token = config['args']['api_key']
+        url = config['args']['api_url']
+        client = OpenAI(
+            api_key = token,
+            base_url= url
+        )
+        reasoning_content = ""
+        answer_content = ""
+        is_answering = False 
+
+        try:
+            completion = client.chat.completions.create(
+                model=config['args']['api_name'], 
+                messages=messages,
+                stream=True,
+            )
+
+            print("\n" + "=" * 20 + "思考过程" + "=" * 20 + "\n")
+
+            for chunk in completion:
+                if not chunk.choices:
+                    print("\nUsage:")
+                    print(chunk.usage)
+                else:
+                    delta = chunk.choices[0].delta
+                    # 打印思考过程
+                    if hasattr(delta, 'reasoning_content') and delta.reasoning_content != None:
+                        print(delta.reasoning_content, end='', flush=True)
+                        reasoning_content += delta.reasoning_content
+                    else:
+                        # 开始回复
+                        if delta.content != "" and is_answering is False:
+                            print("\n" + "=" * 20 + "完整回复" + "=" * 20 + "\n")
+                            is_answering = True
+                        # 打印回复过程
+                        print(delta.content, end='', flush=True)
+                        answer_content += delta.content
+            return (answer_content, reasoning_content)
+        except Exception as e:
+            return []
+
 
 def fetch_api_result(prompt_input, config, port, max_retries=5):
     """Attempt to get a valid result from the API, with a maximum number of retries."""
