@@ -25,7 +25,7 @@
 <sup>3</sup> Tongyi Lab, Alibaba Group<br>
 <sup>4</sup> Peking University<br>
 
-<font size=3><div align='center' >  [[📖 ArXiv Paper](https://arxiv.org/pdf/2505.02156)] [[📊 Code](https://github.com/MozerWang/AMPO)] [[😊 Data](https://huggingface.co/datasets/iiiiwis/AMPO)] [[🏆 Models (Coming Soon)](https://huggingface.co)]  </div></font>
+<font size=3><div align='center' >  [[📖 ArXiv Paper](https://arxiv.org/pdf/2505.02156)] [[📊 Code](https://github.com/MozerWang/AMPO)] [[😊 Data](https://huggingface.co/datasets/iiiiwis/AMPO)] [[🏆 Models (Coming Soon)](https://huggingface.co)] [[📚 中文文档](README_zh.md)] </div></font>
 
 </div>
 
