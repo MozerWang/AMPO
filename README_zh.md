@@ -77,7 +77,7 @@ pip install -e ".[torch,metrics]"
 conda create --name RL python=3.11 -y
 conda activate RL
 cd RL
-pip3 install -e .[vllm]
+pip3 install -e ".[vllm]"
 pip install -r requirements.txt
 ```
 
