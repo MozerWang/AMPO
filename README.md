@@ -1,4 +1,4 @@
-# Adaptive Thinking via Mode Policy Optimization for Social Language Agents
+# Adaptive Social Learning via Mode Policy Optimization for Language Agentss
 
 <p align="center">
     <img src="src/aml.png" width="70%" height="50%">
@@ -25,13 +25,13 @@
 <sup>3</sup> Tongyi Lab, Alibaba Group<br>
 <sup>4</sup> Peking University<br>
 
-<font size=3><div align='center' >  [[📖 ArXiv Paper](https://arxiv.org/pdf/2505.02156)] [[📊 Code](https://github.com/MozerWang/AMPO)] [[😊 Data](https://huggingface.co/datasets/iiiiwis/AMPO)] [[🏆 Models (Coming Soon)](https://huggingface.co)] [[📚 中文文档](README_zh.md)] </div></font>
+<font size=3><div align='center' >  [[📖 ArXiv Paper](https://arxiv.org/pdf/2505.02156)] [[📊 Code](https://github.com/MozerWang/AMPO)] [[😊 Data](https://huggingface.co/datasets/iiiiwis/AMPO)] </div></font>
 
 </div>
 
 
 ## 👀 Overview
-This repository contains code and data for our paper **Adaptive Thinking via Mode Policy Optimization for Social Language Agents**. In this paper, we propose the **A**daptive **M**ode **L**earning framework (**AML**) to empower social agents with the capability for adaptive thinking, enabling them to effectively respond in accordance with the dynamics of social interaction context.
+This repository contains code and data for our paper **Adaptive Social Learning via Mode Policy Optimization for Language Agents**. In this paper, we propose the **A**daptive **M**ode **L**earning framework (**AML**) to empower social agents with the capability for adaptive thinking, enabling them to effectively respond in accordance with the dynamics of social interaction context.
 Specifically, we first develop four thinking modes inspired by hierarchical cognitive control theory, covering a spectrum from intuitive response, through shallow and strategic thinking, to deep deliberation. 
 Next, we perform the injection of thinking modes, which consists of behavioral cloning for learning basic modes and RL-based adaptive thinking mode enhancement.
 For RL-based enhancement, we contrapuntally develop the **A**daptive **M**ode **P**olicy **O**ptimization (**AMPO**) algorithm, which incorporates the mode-level and sample-level information into advantage estimation to strengthen the context-aware thinking mode switching.
