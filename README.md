@@ -45,12 +45,12 @@ In terms of reward, we design three types of reward functions, including answer 
     <img src="./src/exp2.png" width="70%" height="50%">
 </p>
 
-> Extensive experimental results show that AML and AMPO achieves the SOTA performances in comparison with strong baselines. Details can be found in the paper.
+> Extensive experimental results show that AML and AMPO achieve the SOTA performances in comparison with strong baselines. Details can be found in the paper.
 
 ## 🔥 Update
 
 - [2026.01.25]🙌AMPO is accepted to the ICLR 2026, congratulations to all co-authors!
-- [2025.05.04]🔥AMPO is coming! We release the [paper](https://arxiv.org/pdf/2505.02156), [code](https://github.com/MozerWang/AMPO), [data](https://huggingface.co/datasets/iiiiwis/AMPO)! The ckpt is still under security review and will be available soon！
+- [2025.05.04]🔥AMPO is coming! We have released the [paper](https://arxiv.org/pdf/2505.02156), [code](https://github.com/MozerWang/AMPO), [data](https://huggingface.co/datasets/iiiiwis/AMPO)! Feel free to contact me via email if you have any issues!
 
 ## 🔧How to use
 <p align="center">
@@ -140,11 +140,12 @@ Thanks for these amazing work!
 
 ## Citation
 ```
-@article{wang2025ampo,
-      title={Adaptive Thinking via Mode Policy Optimization for Social Language Agents}, 
-      author={Minzheng Wang and Yongbin Li and Haobo Wang and Xinghua Zhang and Nan Xu and Bingli Wu and Fei Huang and Haiyang Yu and Wenji Mao},
-      year={2025},
-      journal={arXiv preprint arXiv:2505.02156},
-      url={https://arxiv.org/abs/2505.02156}
+@inproceedings{
+wang2025ampo,
+title={Adaptive Social Learning via Mode Policy Optimization for Language Agents},
+author={Minzheng Wang and Yongbin Li and Haobo Wang and Xinghua Zhang and Nan Xu and Bingli Wu and Fei Huang and Haiyang Yu and Wenji Mao},
+booktitle={Proceedings of ICLR},
+year={2026},
+url={https://openreview.net/forum?id=GG7YQnsdhp}
 }
 ```
